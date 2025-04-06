@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>搜索结果</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <h1>搜索结果</h1>
+    <a href="/">返回主页</a>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>书名</th>
+            <th>作者</th>
+            <th>ISBN</th>
+            <th>出版年份</th>
+        </tr>
+        <tr th:each="book : ${books}">
+            <td th:text="${book.id}"></td>
+            <td th:text="${book.title}"></td>
+            <td th:text="${book.author}"></td>
+            <td th:text="${book.isbn}"></td>
+            <td th:text="${book.publishYear}"></td>
+        </tr>
+    </table>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>添加书籍</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <h1>添加新书籍</h1>
+    <form th:action="@{/add}" th:object="${book}" method="post">
+        <label>书名:</label><input type="text" th:field="*{title}"><br>
+        <label>作者:</label><input type="text" th:field="*{author}"><br>
+        <label>ISBN:</label><input type="text" th:field="*{isbn}"><br>
+        <label>出版年份:</label><input type="number" th:field="*{publishYear}"><br>
+        <button type="submit">保存</button>
+        <a href="/">返回</a>
+    </form>
+</body>
+</html>
